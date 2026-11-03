@@ -1,0 +1,110 @@
+﻿@{
+    Layout = null; // Không dùng Layout chung để tránh lỗi mất màu
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hệ thống đang cập nhật - Trăng Sáng Langbiang</title>
+
+    <!-- Sử dụng Tailwind CSS & Google Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+            body {
+                font-family: 'Be Vietnam Pro', sans-serif;
+            }
+
+            .font-dancing {
+                font-family: 'Dancing Script', cursive;
+            }
+
+            .animate-float {
+                animation: float 6s ease-in-out infinite;
+            }
+            @@keyframes float {
+                0% {
+                    transform: translateY(0px);
+                }
+
+                50% {
+                    transform: translateY(-20px);
+                }
+
+                100% {
+                    transform: translateY(0px);
+                }
+            }
+
+            .animate-pulse-slow {
+                animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50 flex items-center justify-center relative overflow-hidden">
+
+    <!-- HIỆU ỨNG BACKGROUND -->
+    <div class="absolute inset-0 z-0">
+        <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-green-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-float"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-float" style="animation-delay: 2s;"></div>
+        <div class="absolute top-[40%] left-[20%] w-72 h-72 bg-yellow-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-float" style="animation-delay: 4s;"></div>
+    </div>
+
+    <!-- KHUNG NỘI DUNG CHÍNH -->
+    <div class="relative z-10 w-full max-w-2xl px-6 text-center">
+
+        <!-- Icon Bảo trì -->
+        <div class="flex justify-center mb-8">
+            <div class="relative">
+                <div class="absolute inset-0 bg-green-100 rounded-full animate-pulse-slow"></div>
+                <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-xl relative z-10 border border-green-50">
+                    <i class="fas fa-tools text-4xl text-[#2e7d32]"></i>
+                </div>
+                <div class="absolute -bottom-2 -right-2 w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg border-2 border-white z-20">
+                    <i class="fas fa-clock text-white text-sm"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tiêu đề -->
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
+            Hệ thống đang <span class="text-[#2e7d32]">Bảo trì</span>
+        </h1>
+
+        <h2 class="font-dancing text-3xl md:text-4xl text-[#4caf50] mb-6">
+            Dự án Trăng Sáng Langbiang
+        </h2>
+
+        <!-- Lời nhắn -->
+        <div class="bg-white/80 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-sm border border-white mb-8">
+            <p class="text-gray-600 text-base md:text-lg leading-relaxed">
+                Ban tổ chức hiện đang tiến hành cập nhật, làm mới giao diện và dữ liệu cho chiến dịch sắp tới. <br class="hidden md:block" />
+                Vui lòng quay lại trong ít phút nữa nhé!
+            </p>
+        </div>
+
+        <!-- Nút Tương tác -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://www.facebook.com/profile.php?id=61580211752903" target="_blank"
+               class="w-full sm:w-auto px-8 py-3.5 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-bold shadow-lg shadow-blue-200 transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                <i class="fab fa-facebook-f"></i> Cập nhật tin tức trên Fanpage
+            </a>
+            <button onclick="window.location.reload();"
+                    class="w-full sm:w-auto px-8 py-3.5 bg-white hover:bg-gray-50 text-gray-700 rounded-full font-bold shadow-md border border-gray-200 transition flex items-center justify-center gap-2">
+                <i class="fas fa-sync-alt"></i> Tải lại trang
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Mèo trang trí góc phải dưới -->
+    <div class="fixed bottom-0 right-10 z-0 pointer-events-none hidden md:block">
+        <img src="/cat_fishing_on_moon.svg" alt="Mèo trang trí" class="w-40 h-auto opacity-70 animate-float" />
+    </div>
+
+</body>
+</html>

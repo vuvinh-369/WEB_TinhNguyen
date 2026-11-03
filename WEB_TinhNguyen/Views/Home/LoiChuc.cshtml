@@ -1,0 +1,114 @@
+﻿@{
+    ViewData["Title"] = "Lời chúc";
+
+    // MẢNG DỮ LIỆU: TRÍCH XUẤT CHÍNH XÁC 20 LỜI CHÚC TỪ HTML GỐC
+    var wishesData = new[] {
+        new { Id = "7982e081a2", AuthorName = "Trần Hồng Mai Phương", Role = "Ủy Viên BCH LCH Khoa Luật", Message = "Chúc Ban Tổ chức dự án Trăng Sáng Langbiang và các em nhỏ một mùa Trung thu thật vui và ấm áp! Mong rằng những món quà, những nụ cười và tình yêu thương mà dự án mang đến sẽ góp thêm thật nhiều niềm vui cho các em. Chúc dự án luôn giữ được ngọn lửa yêu thương và ngày càng lan tỏa nhiều điều tốt đẹp hơn nữa.", ImageUrl = "https://ik.imagekit.io/ij9ocagrc/tnv/30376_8FLi8XLMZ.webp" },
+        new { Id = "d41390e68d", AuthorName = "Trần Thanh Phong", Role = "Ủy Viên BCH LCH Khoa Luật", Message = "Chúc Trăng sáng Langbiang có một hành trình thật ý nghĩa và đáng nhớ.\nMong mọi người luôn giữ được nhiệt huyết, nụ cười và những ước mơ tuổi trẻ.\nChúc các bạn có thật nhiều kỷ niệm đẹp và những khoảnh khắc đáng trân trọng.\nCảm ơn vì đã cùng nhau tạo nên một hành trình thật đẹp! ❤️", ImageUrl = "https://ik.imagekit.io/ij9ocagrc/tnv/1000025592_chXZpXpHgF.webp" },
+        new { Id = "50b10e9db0", AuthorName = "Nguyễn Đức Thịnh", Role = "Thành viên Ban Tổ Chức", Message = "Chúc chương trình Trăng Sáng LangBiang 2026 diễn ra thật thành công và trọn vẹn! 🌙✨ Chúc cho hành trình lần này sẽ mang đến thật nhiều niềm vui, tiếng cười và những kỷ niệm đẹp, ý nghĩa cho các em nhỏ. ❤️\n\nMong rằng những yêu thương và món quà nhỏ từ tất cả chúng ta sẽ trở thành những điều thật ấm áp trong tuổi thơ của các em. Chúc BTC, các anh chị và các bạn TNV có một hành trình thật đáng nhớ! 🫶🏻", ImageUrl = "https://ik.imagekit.io/ij9ocagrc/tnv/IMG_1790332525788_1790333745325_zrnZISUZh.webp" },
+        new { Id = "f299690d04", AuthorName = "Bùi Trọng Tấn", Role = "Thành Viên Ban Tổ Chức", Message = "Chúc cho dự án tình nguyện \"Trăng Sáng Langbiang\" sẽ diễn ra thật trọn vẹn, mang theo hơi ấm, niềm vui và những nụ cười trong trẻo nhất đến với các em nhỏ cùng bà con nơi đại ngàn. Mong rằng mỗi món quà được trao đi sẽ tiếp thêm niềm tin và hy vọng cho vùng đất cao nguyên. Chúc cho tất cả các thành viên trong ban tổ chức và tình nguyện viên luôn dồi dào sức khỏe, giữ vững nhiệt huyết thanh xuân để cùng nhau tạo nên một mùa tình nguyện thật rực rỡ và đáng nhớ!", ImageUrl = "https://ik.imagekit.io/ij9ocagrc/tnv/1790329363545_567829735581383072_8742102970194474003_1ff374c438f46a6463a5959b950fb916_0cPT0iWhg.webp" },
+        new { Id = "8aea2a7e65", AuthorName = "PHÙ HỒNG GIANG", Role = "Hdbank CN Tây Ninh", Message = "Mình rất vui và trân trọng khi có cơ hội được đồng hành cùng dự án. Mỗi phần quà có thể không quá lớn, nhưng mình tin rằng khi được trao bằng sự chân thành, nó sẽ mang theo một chút ấm áp và niềm vui đến với các em. Hy vọng những điều nhỏ bé mà mình cùng mọi người làm sẽ phần nào đó để các em có thêm niềm tin yêu . Và cuối cùng, cảm ơn sức trẻ,sự nhiệt thành của những trái tim đầy yêu thương ở các bạn sinh viên.\nHẹn gặp lại và hi vọng sẽ xin chào Trăng Sáng LangBiang vào nhiều năm tiếp theo nhé!", ImageUrl = "https://ik.imagekit.io/ij9ocagrc/tnv/IMG_7625_V9pkL02pd.webp" },
+        new { Id = "8aaf19841d", AuthorName = "Lê Minh Trí", Role = "Thành viên Ban Tổ chức 2026", Message = "Rất vinh dự khi được đồng hành cùng dự án từ mùa đầu tiên. Chúc mừng dự án mùa thứ 2 diễn ra thành công tốt đẹp.", ImageUrl = "https://ik.imagekit.io/ij9ocagrc/tnv/1000083983_6VR9_QOi7.webp" },
+        new { Id = "e8f4e686f4", AuthorName = "Huỳnh Minh Khôi", Role = "Khoa Luật -", Message = "Chúc dự án \"Trăng sáng Langbiang\" diễn ra thành công rực rỡ và lan tỏa thật nhiều giá trị tích cực! Mong rằng hành trình mang \"ánh trăng\" ấm áp đến với vùng đất Langbiang sẽ thắp sáng những nụ cười, sưởi ấm những trái tim và để lại những dấu ấn sâu đậm, tình cảm trọn vẹn trong lòng cộng đồng. Chúc toàn thể Ban tổ chức cùng các tình nguyện viên thật nhiều sức khỏe, nhiệt huyết và luôn giữ vững ngọn lửa cống hiến!", ImageUrl = "https://ik.imagekit.io/ij9ocagrc/tnv/z7684613788150_422507847a339d4e7cb0214fd29197f1_BaYs-uSQc.webp" },
+        new { Id = "ea4711a569", AuthorName = "Đinh Đăng Khoa", Role = "CLB bóng đá HUTECH", Message = "💌 Chúc “Trăng sáng Langbiang 2026” sẽ có một hành trình thật trọn vẹn và đáng nhớ! Chúc chương trình luôn giữ được ngọn lửa nhiệt huyết, lan tỏa thật nhiều yêu thương và mang đến những khoảnh khắc ý nghĩa cho tất cả mọi người. Chúc Quý Thầy, Cô, BTC, TNV cùng các em thiếu nhi thật nhiều sức khỏe, niềm vui và năng lượng để cùng nhau tạo nên một mùa Trăng thật đẹp, ấm áp và đầy ắp tiếng cười. 🌕❤️", ImageUrl = "https://ik.imagekit.io/ij9ocagrc/tnv/6893f2313c53bc0de542_hhV5FMaR3.webp" },
+        new { Id = "8ba202564c", AuthorName = "Phạm Minh Phát", Role = "Thành viên Ban sáng lập", Message = "Từ một hành trình bắt đầu bằng những điều rất giản dị, thật vui khi hôm nay hành trình này lại được tiếp nối bởi một thế hệ mới. Phát chúc BTC 2026 có một chặng đường thật thuận lợi, nhiều niềm vui và thật nhiều kỷ niệm đẹp. Mong các bạn luôn giữ được ngọn lửa ban đầu, luôn hết mình với hành trình này và cùng nhau tạo nên một mùa Trăng thật trọn vẹn!", ImageUrl = "https://ik.imagekit.io/ij9ocagrc/tnv/anhbia_6XST7_va_.webp" },
+        new { Id = "47eb05f472", AuthorName = "Huỳnh Thị Mỹ Tiên", Role = "", Message = "Có những niềm vui chẳng cần lớn lao, chỉ cần đủ chân thành là có thể ở lại thật lâu trong ký ức. Chúng mình mang một chút ấm áp của mùa trăng đến Langbiang, mong được nhìn thấy những ánh mắt háo hức và nụ cười thật hồn nhiên của các em.\nHy vọng  sẽ trở thành một mảnh ký ức dịu dàng trong tuổi thơ, để các em luôn tin rằng quanh mình có thật nhiều yêu thương. Cứ vô tư lớn lên, cứ mạnh dạn ước mơ và bước về phía ngày mai nhé. 🌙💛", ImageUrl = "https://ik.imagekit.io/ij9ocagrc/tnv/IMG_6996_3koGYIvCi.webp" },
+        new { Id = "7117dc8f4f", AuthorName = "Lê Nguyễn Mỹ Thường", Role = "Khoa Luật", Message = "“Chúc Trăng Sáng Langbiang có một hành trình thật ý nghĩa, lan tỏa yêu thương và mang đến nhiều niềm vui cho các em nhỏ. Chúc các thành viên BTC luôn giữ vững nhiệt huyết, đoàn kết và cùng nhau tạo nên những kỷ niệm đẹp. Mong rằng mỗi yêu thương trao đi hôm nay sẽ trở thành động lực để các em tự tin theo đuổi ước mơ và viết tiếp những hành trình tươi sáng ngày mai.”", ImageUrl = "https://ik.imagekit.io/ij9ocagrc/tnv/IMG_7389_mqWSMc4Uw.webp" },
+        new { Id = "c4652243d9", AuthorName = "Anh Huỳnh Việt Đức", Role = "", Message = "“Chúc dự án Trăng Sáng Langbiang 2026 thật nhiều yêu thương và thành công! Mong rằng mỗi món quà trao đi không chỉ là niềm vui trong khoảnh khắc, mà còn là động lực để các em luôn cố gắng học tập, nuôi dưỡng ước mơ và tự tin bước về phía trước. Hy vọng Trăng Sáng Langbiang sẽ tiếp tục lan tỏa thật nhiều tình yêu thương và viết thêm thật nhiều câu chuyện đẹp trong những mùa tiếp theo!” 🌙✨", ImageUrl = "https://ik.imagekit.io/ij9ocagrc/tnv/IMG_1858_QL-7_jsrI.webp" },
+        new { Id = "01d7eaaefd", AuthorName = "Minh Phương", Role = "Khoa Luật", Message = "Chúc “Trăng sáng Langbiang” 2026 sẽ trở thành một hành trình thật đặc biệt, nơi tuổi trẻ được sống hết mình, được trải nghiệm, được sẻ chia và cùng nhau tạo nên những điều ý nghĩa. Mong rằng những ngày tháng đồng hành bên nhau sẽ lưu lại thật nhiều nụ cười, kỷ niệm và những câu chuyện đẹp. Chúc tất cả các bạn luôn vững bước, giữ trọn nhiệt huyết và cùng viết nên một mùa “Trăng sáng Langbiang ” thật đáng nhớ!", ImageUrl = "https://ik.imagekit.io/ij9ocagrc/tnv/421F6B55-F4E0-4074-8F5B-81D914327097_ptq_-SOm7.webp" },
+        new { Id = "f0ad907d5d", AuthorName = "Nguyễn Ngọc Anh", Role = "Khoa KHXH-QHCC", Message = "Mong rằng mỗi mùa trăng đi qua, các em vẫn luôn giữ được nụ cười trong veo, một trái tim ấm áp và thật nhiều niềm tin vào những điều tốt đẹp phía trước. 🌕\n\nChúc Ban Tổ chức và các bạn tình nguyện viên luôn mạnh khỏe, giữ mãi ngọn lửa nhiệt huyết và có hành trình thật suôn sẻ, để tiếp tục mang đến những điều ý nghĩa và giá trị hơn nữa cho cộng đồng. 🩵", ImageUrl = "https://ik.imagekit.io/ij9ocagrc/tnv/IMG_3045_d6Qw56TBx.webp" },
+        new { Id = "a45dbaf46b", AuthorName = "Nguyễn Y Đình", Role = "Khoa Luật", Message = "Chúc chương trình Trung Thu tại Langbiang diễn ra thật thành công và trọn vẹn, mang đến thật nhiều niềm vui và những khoảnh khắc đáng nhớ. Chúc các em nhỏ luôn vui vẻ, khỏe mạnh, chăm ngoan và có một mùa Trung Thu thật ấm áp, ngập tràn tiếng cười và yêu thương!", ImageUrl = "https://ik.imagekit.io/ij9ocagrc/tnv/IMG_1812_VBxszYrV8.webp" },
+        new { Id = "ebce711e4d", AuthorName = "Trần Thị Kim Yến", Role = "Thành viên Ban tổ chức", Message = "Mong những điều nhỏ bé mà Trăng sáng LangBiang cùng nhau trao gửi có thể góp thêm một chút ấm áp vào tuổi thơ của các em. Hy vọng chương trình sẽ ngày càng phát triển, lan tỏa những giá trị ý nghĩa đến nhiều vùng đất hơn nữa và trở thành một hành trình đẹp, nơi mọi người có thể cùng nhau góp sức, cùng nhau yêu thương và cùng nhau tạo nên những điều thật đáng nhớ.", ImageUrl = "https://ik.imagekit.io/ij9ocagrc/tnv/IMG_8303-trung-bi-nh_ulbGFWfI8.webp" },
+        new { Id = "7080a2d04c", AuthorName = "Hà Tuấn Việt", Role = "Khoa Luật", Message = "Tuy không thể đồng hành cùng đoàn lên Langbiang, nhưng tim mình vẫn hướng về đó. Chúc Trăng Sáng Langbiang đi bình an, làm hết mình và về với thật nhiều câu chuyện đẹp để kể nhé! Ở xa gửi một chút lòng, một chút quà, một chút thương. Chúc chương trình của chúng ta thành công rực rỡ!", ImageUrl = "https://ik.imagekit.io/ij9ocagrc/tnv/att.ddAeJg1H5rzj7BV1mXrN_d_vPiocPrpLZHHkbRu7mYA_DNSC0H4lm.webp" },
+        new { Id = "89ec821944", AuthorName = "Nguyễn Trúc Thảo Vy", Role = "Thành viên ban tổ chức", Message = "Chúc Trăng Sáng LangBiang sẽ thắp lên một mùa tình nguyện thật rực rỡ và đong đầy ý nghĩa! Mong rằng từng bước chân của BTC và các bạn TNV đều mang theo hơi ấm yêu thương, gieo những nụ cười hạnh phúc và dệt nên một hành trình thật trọn vẹn, đáng nhớ.", ImageUrl = "https://ik.imagekit.io/ij9ocagrc/tnv/h_nOHBNMpqr.webp" },
+        new { Id = "02673f5e7b", AuthorName = "Nguyễn Thị Như Ý", Role = "Thành viên ban tổ chức", Message = "Chúc Trăng sáng Langbiang luôn giữ được ngọn lửa nhiệt huyết và yêu thương. Mong mỗi hành trình đều mang đến thật nhiều nụ cười, những kỷ niệm đẹp và những điều tử tế. Hy vọng ánh sáng tuổi trẻ sẽ luôn được lan tỏa trên những chặng đường phía trước.", ImageUrl = "https://ik.imagekit.io/ij9ocagrc/tnv/lv_0_20260924111253_h7LkRLbrF.webp" },
+        new { Id = "f5b4f2570d", AuthorName = "Cô Phan Thái Tường Vi", Role = "Khoa KHXH-QHCC", Message = "Chúc dự án “Trăng sáng Langbiang” 2026 sẽ có một hành trình thật trọn vẹn và ý nghĩa. Mong rằng mỗi hoạt động của dự án không chỉ mang đến những sẻ chia thiết thực, mà còn lan tỏa tinh thần trách nhiệm, lòng nhân ái và những giá trị tốt đẹp đến cộng đồng. Chúc Ban Tổ chức cùng các bạn sinh viên luôn giữ vững nhiệt huyết, đồng lòng và tạo nên thật nhiều dấu ấn đáng nhớ trên hành trình phía trước.", ImageUrl = "https://ik.imagekit.io/ij9ocagrc/tnv/1790309303031_2222428142502534329_7698994932399712182_0db4e61a7fe15baf73ea83860e754111_aTAkg0-Cr.webp" }
+    };
+}
+
+<main>
+    <!-- HERO SECTION -->
+    <section class="relative flex items-center overflow-hidden px-6 text-center py-16 sm:py-20">
+        <div class="absolute inset-0 -z-20 bg-gradient-to-b from-sky-soft via-[#dff2e6] to-cream dark:from-[#0a1626] dark:via-night-2 dark:to-night"></div>
+        <div class="relative z-10 mx-auto w-full max-w-3xl">
+            <span class="mb-3 inline-block rounded-full bg-white/50 px-5 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-leaf-deep backdrop-blur dark:bg-white/5 dark:text-leaf-bright">Lời chúc</span>
+            <h1 class="font-display pb-3 font-bold leading-[1.18] text-gradient-green sm:pb-5 text-3xl sm:text-5xl">Gửi yêu thương từ trái tim</h1>
+            <p class="mx-auto mt-5 max-w-xl text-base sm:text-lg text-forest/80 dark:text-ink/80">Những lời chúc ấm áp từ các tình nguyện viên Trăng Sáng Langbiang mùa 2026.</p>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION (SEND WISH) -->
+    <section class="mx-auto max-w-6xl px-5 pb-10 sm:px-6">
+        <div class="flex flex-col items-center gap-4 rounded-3xl border border-leaf/15 bg-white/60 px-6 py-8 text-center backdrop-blur-sm dark:border-leaf-bright/15 dark:bg-white/5 sm:flex-row sm:justify-between sm:text-left">
+            <div>
+                <h2 class="font-display text-2xl font-bold text-forest dark:text-ink sm:text-3xl">Bạn muốn gửi lời chúc?</h2>
+                <p class="mt-1 text-sm text-forest/70 dark:text-ink/70">Đã có 43 lời chúc được gửi tới Langbiang.</p>
+            </div>
+            <button type="button" class="inline-flex min-h-12 shrink-0 cursor-pointer items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-leaf-deep to-leaf text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:brightness-110 focus-visible:ring-2 focus-visible:ring-leaf focus-visible:ring-offset-2 sm:text-base dark:focus-visible:ring-offset-night">
+                <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"></path><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
+                Gửi lời chúc
+            </button>
+        </div>
+    </section>
+
+    <!-- MASONRY GRID LỜI CHÚC -->
+    <section class="mx-auto px-5 pb-16 sm:px-6 sm:pb-24 max-w-6xl">
+        <!-- Tìm kiếm -->
+        <div class="mb-8 flex justify-center ">
+            <div class="relative w-full max-w-md">
+                <svg viewBox="0 0 24 24" class="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-forest/40 dark:text-ink/40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+                <input type="text" placeholder="Tìm theo tên TNV…" class="w-full rounded-full border-0 bg-white/70 py-3 pl-11 pr-4 text-sm text-forest ring-1 ring-leaf/15 transition placeholder:text-forest/40 focus:ring-2 focus:ring-leaf/30 dark:bg-white/5 dark:text-ink dark:ring-leaf-bright/15 dark:placeholder:text-ink/40 dark:focus:ring-leaf-bright/30" value="">
+            </div>
+        </div>
+
+        <!-- Render List bằng Vòng lặp -->
+        <div class="columns-1 gap-4 sm:columns-2 md:columns-3 lg:columns-4 [&>*]:mb-4 [&>*]:break-inside-avoid ">
+            @foreach (var wish in wishesData)
+            {
+                <a class="block cursor-pointer" href="/loi-chuc/@wish.Id">
+                    <div class="@("@container") relative w-full overflow-hidden rounded-2xl @("@sm:rounded-[1.5rem]") border border-leaf/25 bg-gradient-to-b from-[#ffffff] via-[#fcfbf7] to-[#f2f9ee] shadow-sm hover:shadow-md transition-shadow">
+                        <!-- SVG Hình khối trang trí (Trái) -->
+                        <svg viewBox="0 0 70 40" class="pointer-events-none absolute opacity-70 -left-1 top-1.5 h-5 w-9 @("@sm:top-2") @("@sm:h-7") @("@sm:w-12") @("@lg:h-8") @("@lg:w-14")" aria-hidden="true"><path d="M10 28 Q5 28 5 22 Q5 16 12 15 Q15 6 26 8 Q32 3 40 6 Q48 2 54 9 Q62 10 62 18 Q66 22 62 28 Z" fill="#8fd8f7" opacity="0.75"></path></svg>
+                        <svg viewBox="0 0 70 40" class="pointer-events-none absolute opacity-50 right-10 top-3 h-4 w-7 @("@sm:right-12") @("@sm:top-5") @("@sm:h-5") @("@sm:w-9") @("@lg:h-6") @("@lg:w-10")" aria-hidden="true"><path d="M10 28 Q5 28 5 22 Q5 16 12 15 Q15 6 26 8 Q32 3 40 6 Q48 2 54 9 Q62 10 62 18 Q66 22 62 28 Z" fill="#8fd8f7" opacity="0.75"></path></svg>
+
+                        <!-- SVG Hình khối trang trí (Phải - Trăng sao) -->
+                        <svg viewBox="0 0 60 60" class="pointer-events-none absolute right-3 top-2.5 h-7 w-7 @("@2xs:h-8") @("@2xs:w-8") @("@sm:h-9") @("@sm:w-9") @("@lg:h-10") @("@lg:w-10") @("@2xl:h-11") @("@2xl:w-11")" aria-hidden="true"><circle cx="30" cy="30" r="16" fill="#f5a623" opacity="0.9"></circle><circle cx="30" cy="30" r="13" fill="#ffe066"></circle><circle cx="25" cy="28" r="1.5" fill="#a05a00"></circle><circle cx="35" cy="28" r="1.5" fill="#a05a00"></circle><path d="M26 34 Q30 38 34 34" stroke="#a05a00" stroke-width="1.5" stroke-linecap="round" fill="none"></path><circle cx="23" cy="32" r="2" fill="#ff7a7a" opacity="0.6"></circle><circle cx="37" cy="32" r="2" fill="#ff7a7a" opacity="0.6"></circle><g stroke="#f5a623" stroke-width="2" stroke-linecap="round"><line x1="30" y1="6" x2="30" y2="10"></line><line x1="30" y1="50" x2="30" y2="54"></line><line x1="6" y1="30" x2="10" y2="30"></line><line x1="50" y1="30" x2="54" y2="30"></line><line x1="13" y1="13" x2="16" y2="16"></line><line x1="44" y1="44" x2="47" y2="47"></line><line x1="13" y1="47" x2="16" y2="44"></line><line x1="44" y1="16" x2="47" y2="13"></line></g></svg>
+
+                        <div class="relative z-10 flex flex-col items-center text-center px-3.5 pb-11 pt-4 @("@2xs:px-4") @("@2xs:pb-12") @("@2xs:pt-5") @("@sm:px-5") @("@sm:pb-14") @("@sm:pt-6") @("@lg:px-8") @("@lg:pb-18") @("@lg:pt-7") @("@2xl:px-10") @("@2xl:pb-20") @("@2xl:pt-9")">
+
+                            <!-- Khung ảnh đại diện -->
+                            <div class="relative mb-2.5 mt-0.5">
+                                <div class="pointer-events-none absolute z-20 h-4 w-12 -rotate-6 rounded-xs bg-amber-200/90 shadow-xs ring-1 ring-amber-400/30 backdrop-blur-xs -top-2 left-1/2 -translate-x-1/2" style="clip-path:polygon(0% 15%, 5% 0%, 95% 0%, 100% 15%, 98% 85%, 100% 100%, 0% 100%, 2% 85%)"></div>
+                                <div class="relative overflow-hidden rounded-xl border-[3.5px] @("@sm:border-[4px]") border-white bg-white shadow-sm -rotate-1 h-28 w-28 @("@2xs:h-32") @("@2xs:w-32") @("@sm:h-40") @("@sm:w-40") @("@lg:h-52") @("@lg:w-52") @("@2xl:h-64") @("@2xl:w-64")">
+                                    <img alt="@wish.AuthorName" src="@wish.ImageUrl" class="absolute inset-0 object-cover h-full w-full" />
+                                </div>
+                            </div>
+
+                            <!-- Nội dung lời chúc -->
+                            <div class="mt-0.5 w-full max-w-md @("@2xl:max-w-xl") px-1">
+                                <p class="font-display font-bold leading-snug text-forest break-words text-sm @("@2xs:text-lg") @("@sm:text-xl") @("@lg:text-2xl") @("@2xl:text-3xl")">“@wish.Message”</p>
+                                <p class="mt-1 font-display font-bold text-sunset break-words text-xs @("@2xs:text-sm") @("@sm:text-lg") @("@lg:text-2xl") @("@2xl:text-3xl")">— @wish.AuthorName —</p>
+
+                                @if (!string.IsNullOrEmpty(wish.Role))
+                                {
+                                    <p class="mt-3.5 @("@sm:mt-4") font-sans text-forest/70 text-[11px] @("@2xs:text-xs") @("@sm:text-sm") @("@lg:text-base") @("@2xl:text-lg")">@wish.Role</p>
+                                }
+                            </div>
+                        </div>
+
+                        <!-- SVG Lượn sóng trang trí (Dưới cùng card) -->
+                        <svg viewBox="0 0 420 100" preserveAspectRatio="none" class="pointer-events-none absolute inset-x-0 bottom-0 w-full h-10 @("@2xs:h-11") @("@sm:h-12") @("@lg:h-14") @("@2xl:h-16")" aria-hidden="true"><path d="M0 100 L0 55 Q40 25 80 50 Q130 15 190 45 Q240 10 300 40 Q360 20 420 50 L420 100 Z" fill="#b8e6b8" opacity="0.5"></path><path d="M0 100 L0 70 Q50 45 100 65 Q150 35 220 60 Q280 40 350 65 Q390 50 420 68 L420 100 Z" fill="#7cc34a" opacity="0.35"></path><path d="M0 100 L0 80 Q60 65 130 78 Q200 62 270 76 Q340 65 420 78 L420 100 Z" fill="#5cb85c" opacity="0.25"></path><g transform="translate(18, 25)"><polygon points="12,5 4,22 20,22" fill="#2e7d32"></polygon><polygon points="12,14 2,34 22,34" fill="#388e3c"></polygon><polygon points="12,25 0,48 24,48" fill="#2e7d32"></polygon><rect x="10" y="48" width="4" height="8" fill="#795548"></rect></g><g transform="translate(370, 30)"><polygon points="10,5 3,20 17,20" fill="#388e3c"></polygon><polygon points="10,13 1,30 19,30" fill="#2e7d32"></polygon><polygon points="10,22 0,42 20,42" fill="#43a047"></polygon><rect x="8" y="42" width="4" height="7" fill="#795548"></rect></g><g transform="translate(80, 68)"><circle cx="6" cy="6" r="3" fill="#f5a623"></circle><circle cx="6" cy="1" r="2" fill="#ffffff"></circle><circle cx="11" cy="6" r="2" fill="#ffffff"></circle><circle cx="6" cy="11" r="2" fill="#ffffff"></circle><circle cx="1" cy="6" r="2" fill="#ffffff"></circle></g><g transform="translate(310, 66)"><circle cx="6" cy="6" r="3" fill="#f5a623"></circle><circle cx="6" cy="1" r="2" fill="#ffffff"></circle><circle cx="11" cy="6" r="2" fill="#ffffff"></circle><circle cx="6" cy="11" r="2" fill="#ffffff"></circle><circle cx="1" cy="6" r="2" fill="#ffffff"></circle></g><g transform="translate(195, 62)"><circle cx="5" cy="5" r="2.5" fill="#f5a623"></circle><circle cx="5" cy="1" r="1.5" fill="#ffffff"></circle><circle cx="9" cy="5" r="1.5" fill="#ffffff"></circle><circle cx="5" cy="9" r="1.5" fill="#ffffff"></circle><circle cx="1" cy="5" r="1.5" fill="#ffffff"></circle></g><g transform="translate(140, 32)"><ellipse cx="4" cy="4" rx="3" ry="2" fill="#ff7a7a" transform="rotate(-30 4 4)"></ellipse><ellipse cx="9" cy="4" rx="3" ry="2" fill="#ff7a7a" transform="rotate(30 9 4)"></ellipse><line x1="6.5" y1="2" x2="6.5" y2="7" stroke="#6d4c41" stroke-width="0.8"></line></g></svg>
+                    </div>
+                </a>
+            }
+        </div>
+        <div class="flex justify-center py-8"></div>
+    </section>
+
+    <!-- FLOATING BUTTON -->
+    <button type="button" aria-hidden="true" tabindex="-1" class="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-5 z-40 inline-flex min-h-14 cursor-pointer items-center gap-2 px-6 py-4 rounded-full bg-gradient-to-r from-leaf-deep to-leaf text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:brightness-110 shadow-xl focus-visible:ring-2 focus-visible:ring-leaf focus-visible:ring-offset-2">
+        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"></path><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
+        <span class="hidden sm:inline">Gửi lời chúc</span>
+        <span class="sr-only sm:hidden">Gửi lời chúc</span>
+    </button>
+</main>

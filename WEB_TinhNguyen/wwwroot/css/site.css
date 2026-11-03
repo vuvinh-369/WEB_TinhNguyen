@@ -1,0 +1,80 @@
+/* Import Fonts từ Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Dancing+Script:wght@700;800&display=swap');
+
+:root {
+    /* Colors */
+    --color-primary: #2E7D32;
+    --color-accent: #1B5E20;
+    --color-canvas: #FDFCF5;
+    --color-surface-alt: #EEF8EA;
+    --color-neutral: #999999;
+    /* Typography Families */
+    --font-sans: 'Be Vietnam Pro', sans-serif;
+    --font-display: 'Dancing Script', cursive;
+    /* Spacing & Rounded */
+    --spacing-xl: 24px;
+    --spacing-section: 44px;
+    --rounded-full: 9999px;
+    --rounded-sm: 16px;
+    /* Shadows */
+    --shadow-btn: rgba(27, 94, 32, 0.35) 0px 18px 50px -20px;
+    --shadow-card: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+}
+
+/* Base Styles */
+body {
+    background-color: var(--color-canvas);
+    font-family: var(--font-sans);
+    color: #111111; /* Text color từ light theme */
+    line-height: 1.63;
+    margin: 0;
+    padding: 0;
+}
+
+/* Typography Classes */
+.display-xxl {
+    font-family: var(--font-display);
+    font-size: 96px;
+    font-weight: 700;
+    line-height: 1.12;
+}
+
+.heading-lg {
+    font-family: var(--font-sans);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+/* Primary Button Component */
+.btn-primary {
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+    padding: 14px 32px;
+    height: 56px;
+    border-radius: var(--rounded-full);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    box-shadow: var(--shadow-btn);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+    .btn-primary:hover {
+        background-color: rgb(39, 107, 42);
+        color: #FFFFFF;
+    }
+
+/* Card Component */
+.card-standard {
+    background-color: #FFFFFF;
+    padding: var(--spacing-xl);
+    border-radius: var(--rounded-sm);
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(112, 112, 112, 0.1);
+}
